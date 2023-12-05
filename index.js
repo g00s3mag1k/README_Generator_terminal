@@ -7,7 +7,7 @@ const generateReadMe = require('./generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 
-inquirer.prompt([
+const generateQuestions = [
     {
         type: 'input',
         name: 'title',
@@ -17,6 +17,11 @@ inquirer.prompt([
         type: 'input',
         name: 'description',
         message: 'Brief Description of your Project; '
+    },
+    {
+        type: 'list',
+        name: 'table',
+        message: ['Description', 'Installation', 'Usage', 'Credits', 'License', 'Questions']
     },
     {
         type: 'input',
@@ -37,12 +42,7 @@ inquirer.prompt([
         type: 'checkbox',
         name: 'license',
         message: 'Select a license if applicable: ',
-        choices: ['Apache 2.0', 'MIT License', 'Boost Software 1.0', 'Eclipse 2.0', 'Mozilla 2.0', 'The Unlicense', 'None'],
-    },
-    {
-        type: 'input',
-        name: 'features',
-        message: 'If your project has features, list them here. '
+        choices: ['Apache 2.0', 'MIT License', 'Boost Software 1.0', 'Eclipse 2.0', 'GNU GPLv3', 'None'],
     },
     {
         type: 'input',
@@ -54,7 +54,7 @@ inquirer.prompt([
         name: 'github',
         message: 'What is your Github Username?'
     },
-])
+]
 .then((data) => {
     const readmeContent = generateMarkdown(data);
 
@@ -76,10 +76,12 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 
 function init() {
-    inquirer.prompt(generateQuestions).then(function(data) {
-        console.log(data);
-    var fileContent = generateMarkdown(data);
-    readmeContent(fileContent)
+    inquirer
+    .prompt(generateQuestions())
+    .then(function(data) {
+      console.log(data);
+      var fileContent = generateMarkdown(data);
+      readmeContent(fileContent);
     });
 }
 
