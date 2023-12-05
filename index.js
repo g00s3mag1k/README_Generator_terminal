@@ -7,68 +7,78 @@ const generateReadMe = require('./generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 
-const generateQuestions = [
+inquirer.prompt([
     {
         type: 'input',
-        name: 'Title',
+        name: 'title',
         message: 'Name of your Project?'
     },
     {
         type: 'input',
-        name: 'Description',
+        name: 'description',
         message: 'Brief Description of your Project; '
     },
     {
         type: 'input',
-        name: 'Installation',
+        name: 'installation',
         message: 'Explain installation instructions if any: '
     },
     {
         type: 'input',
-        name: 'Usage',
+        name: 'usage',
         message: 'List the languages you used in your project; '
     },
     {
         type: 'input',
-        name: 'Credits',
+        name: 'credits',
         message: 'List your collaborators, if any; '
     },
     {
         type: 'checkbox',
-        name: 'License',
+        name: 'license',
         message: 'Select a license if applicable: ',
         choices: ['Apache 2.0', 'MIT License', 'Boost Software 1.0', 'Eclipse 2.0', 'Mozilla 2.0', 'The Unlicense', 'None'],
     },
     {
         type: 'input',
-        name: 'Features',
+        name: 'features',
         message: 'If your project has features, list them here. '
     },
     {
         type: 'input',
-        name: 'E-mail',
+        name: 'e-mail',
         message: 'Provide an e-mail address: '
     },
     {
         type: 'input',
-        name: 'GitHub',
+        name: 'github',
         message: 'What is your Github Username?'
     },
-];
+])
+.then((data) => {
+    const readmeContent = generateMarkdown(data);
+
+    fs.writeFile('README.md', readmeContent, (err) =>
+      err ? console.error(err) : console.log('README file has been created!')
+    );
+})
+.catch((error) => console.error(error));
 
 // TODO: Create a function to write README file
-
+/*
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
       if (err) throw err;
       console.log("README file has been created!");
     });
-}
+}*/
 
 // TODO: Create a function to initialize app
 
 function init() {
-    inquirer.prompt(generateQuestions).then(function() {})
+    inquirer.prompt(generateQuestions).then(function(answers) {
+        console.log(answers);
+    })
 }
 
 // Function call to initialize app
