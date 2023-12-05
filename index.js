@@ -42,7 +42,7 @@ const generateQuestions = [
         type: 'checkbox',
         name: 'license',
         message: 'Select a license if applicable: ',
-        choices: ['Apache 2.0', 'MIT License', 'Boost Software 1.0', 'Eclipse 2.0', 'GNU GPLv3', 'None'],
+        choices: ['Apache 2.0', 'MIT', 'Boost Software 1.0', 'Eclipse 2.0', 'GNU GPLv3', 'None'],
     },
     {
         type: 'input',
