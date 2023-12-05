@@ -76,11 +76,14 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 
 function init() {
-    inquirer.prompt(generateQuestions).then(function(answers) {
-        console.log(answers);
-    })
+    inquirer.prompt(generateQuestions).then(function(data) {
+        console.log(data);
+    var fileContent = generateMarkdown(data);
+    readmeContent(fileContent)
+    });
 }
 
 // Function call to initialize app
 
 init();
+generateReadMe();
