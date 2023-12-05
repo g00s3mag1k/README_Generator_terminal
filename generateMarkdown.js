@@ -13,28 +13,43 @@ function getLicenseBadge(license) {
     return '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
   }
   if (license === 'Boost Software 1.0') {
-    return '![License: Boost Software 1.0](https://www.boost.org/LICENSE_1_0.txt%29)'
+    return '[![License: Boost Software 1.0](https://www.boost.org/LICENSE_1_0.txt)](https://www.boost.org/LICENSE_1_0.txt)';
   }
   if (license === 'Eclipse 2.0') {
-    return '![License: EPL 2.0](https://opensource.org/licenses/EPL-1.0%29)'
+    return '[![License: EPL 2.0](https://opensource.org/licenses/EPL-1.0)](https://opensource.org/licenses/EPL-1.0)';
   }
   return '';
 }
 
-getLicenseBadge(license);
+getLicenseBadge('MIT');
 
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function renderLicenseLink(license) {
-
+function getLicenseLink(license) {
+  if (license) {
+    // find actual license links first
+    return 'license links';
+  } else {
+    return '';
+  }
 }
+
+getLicenseLink(license);
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {
-  
+function renderLicenseSection(data) {
+  const licenseHeader = "## License";
+  const licenseIndex = data.indexOf(licenseHeader);
+
+  if (licenseIndex !== -1) {
+    return data.substring(licenseIndex);
+  }
+  return '';
 }
+console.log(renderLicenseSection());
+renderLicenseSection(license);
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
