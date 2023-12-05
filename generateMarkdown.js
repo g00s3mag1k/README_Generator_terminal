@@ -26,7 +26,7 @@ getLicenseBadge('MIT');
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
-function getLicenseLink(license) {
+/*function getLicenseLink(license) {
   if (license) {
     // find actual license links first
     return 'license links';
@@ -35,7 +35,7 @@ function getLicenseLink(license) {
   }
 }
 
-getLicenseLink(license);
+getLicenseLink(license);*/
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
@@ -48,45 +48,38 @@ function renderLicenseSection(data) {
   }
   return '';
 }
-console.log(renderLicenseSection());
-renderLicenseSection(license);
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `
   # ${data.title}
 
-  ## Description
+  ## Table of Contents
+  - [Description](#description)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Credits](#credits)
+  - [License](#license)
+  - [Questions](#questions)
 
+  ## Description
   ${data.description}
 
-  ## Table of Contents
-
-  ${data.table}
-
   ## Installation
-
   ${data.installation}
 
   ## Usage
-
   ${data.usage}
 
   ## Credits
-
   ${data.credits}
-
+  
   ## License
-
   This project is licensed under the ${data.license} license.
-
+  
   ## Questions
-
-  Any questions about this project, please contact me via [email](mailto:${data.email}) or visit my [GitHub](https://github.com/${data.github}) profile.
-
+  Any questions about this project, please contact me via E-mail:(mailto:${data.email}) or visit my GitHub:(https://github.com/${data.github}) profile.
 `;
 };
-
-
 
 module.exports = generateMarkdown;
