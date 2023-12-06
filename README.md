@@ -1,5 +1,5 @@
 
-  # a
+  # README.md Generator
   ### [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   https://choosealicense.com/licenses/mit/
 
@@ -12,19 +12,19 @@
   - [Questions](#questions)
 
   ## Description
-  b
+  This is an application that is deployed through the integrated terminal that creates a professional README.md file
 
   ## Installation
-  c
+  Open integrated terminal in your code editor and run 'npm i inquirer' before starting the application
 
   ## Usage
-  d
+  JavaScript, Node.js, Markdown syntax, inquirer, and Git
 
   ## Credits
-  e
+  N/A
   
   ## License
   This project is licensed under the MIT license.
   
   ## Questions
-  Any questions about this project, please contact me via E-mail: f or visit my GitHub:(https://github.com/g) profile.
+  Any questions about this project, please contact me via E-mail: Example@E-mail.com or visit my GitHub:(https://github.com/g00s3mag1k) profile.
