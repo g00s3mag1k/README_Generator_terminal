@@ -36,6 +36,9 @@ https://www.npmjs.com/package/inquirer
 Node.js v20.9.0 website:
 https://nodejs.org/docs/latest-v20.x/api/documentation.html
 
+Athena A.I code assistant:
+https://www.shecodes.io/
+
 ## License 
 
 Please refer to the LICENSE in the repo
