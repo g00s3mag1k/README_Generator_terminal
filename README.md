@@ -1,5 +1,5 @@
 
-  # undefined
+  # README.md Generator
 
   ## Table of Contents
   - [Description](#description)
@@ -10,20 +10,20 @@
   - [Questions](#questions)
 
   ## Description
-  undefined
+  User runs application in terminal using node.js to create a README.md dynamically.
 
   ## Installation
-  undefined
+  Open up integrated terminal and run npm i inquirer first than node index.js to start prompts
 
   ## Usage
-  undefined
+  JavaScript, Node.js, MarkDown, inquirer, and jSON.
 
   ## Credits
-  undefined
+  N/A
   
   ## License
   
-  This project is licensed under the undefined license.
+  This project is licensed under the MIT license.
   
   ## Questions
-  Any questions about this project, please contact me via E-mail:(mailto:undefined) or visit my GitHub:(https://github.com/undefined) profile.
+  Any questions about this project, please contact me via E-mail:Example@e-mail.com or visit my GitHub:(https://github.com/g00s3mag1k) profile.
