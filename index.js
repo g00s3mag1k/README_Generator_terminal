@@ -69,7 +69,9 @@ const generateQuestions = [
 
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
-      if (err) throw err;
+      if (err) {
+      return console.log(err);
+      }
       console.log("README file has been created!");
     });
 }
@@ -79,9 +81,9 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer
     .prompt(generateQuestions)
-    .then(function(data) {
-      console.log(data);
-      writeToFile(generateMarkdown(data));
+    .then(function(userInput) {
+      console.log(userInput);
+      writeToFile(generateMarkdown(userInput));
       
     });
 }
