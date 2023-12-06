@@ -1,5 +1,7 @@
 
-  # README.md Generator
+  # a
+  ### [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  https://choosealicense.com/licenses/mit/
 
   ## Table of Contents
   - [Description](#description)
@@ -10,20 +12,19 @@
   - [Questions](#questions)
 
   ## Description
-  User runs application in terminal using node.js to create a README.md dynamically.
+  b
 
   ## Installation
-  Open up integrated terminal and run npm i inquirer first than node index.js to start prompts
+  c
 
   ## Usage
-  JavaScript, Node.js, MarkDown, inquirer, and jSON.
+  d
 
   ## Credits
-  N/A
+  e
   
   ## License
-  
   This project is licensed under the MIT license.
   
   ## Questions
-  Any questions about this project, please contact me via E-mail:Example@e-mail.com or visit my GitHub:(https://github.com/g00s3mag1k) profile.
+  Any questions about this project, please contact me via E-mail: f or visit my GitHub:(https://github.com/g) profile.
