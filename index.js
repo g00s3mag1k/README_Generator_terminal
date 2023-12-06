@@ -1,10 +1,10 @@
+// packages to run application
 const fs = require('fs'); 
 const inquirer = require('inquirer');
 const generateMarkdown = require('./generateMarkdown.js');
 console.log("Welcome to my README.md generator!");
 
-// TODO: Create an array of questions for user input
-
+// an array of questions for user input
 const generateQuestions = [
     {
         type: 'input',
@@ -32,7 +32,7 @@ const generateQuestions = [
         message: 'List your collaborators, if any; '
     },
     {
-        type: 'checkbox',
+        type: 'list',
         name: 'License',
         message: 'Select a license if applicable: ',
         choices: ['Apache 2.0', 'MIT', 'Boost Software 1.0', 'Eclipse 2.0', 'GNU GPLv3', 'None']
@@ -49,7 +49,7 @@ const generateQuestions = [
     }
 ];
 
-// TODO: Create a function to write README file
+// function to write README file
 
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
@@ -60,7 +60,7 @@ function writeToFile(fileName, data) {
     });
   };
 
-// TODO: Create a function to initialize app
+// function to initialize app
 
 function init() {
  inquirer
