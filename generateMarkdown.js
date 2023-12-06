@@ -54,7 +54,7 @@ function generateMarkdown(data) {
   This project is licensed under the ${data.License} license.
   
   ## Questions
-  Any questions about this project, please contact me via E-mail:${data.Email} or visit my GitHub:(https://github.com/${data.Github}) profile.
+  Any questions about this project, please contact me via E-mail: ${data.Email} or visit my GitHub:(https://github.com/${data.Github}) profile.
 `;
 };
 
