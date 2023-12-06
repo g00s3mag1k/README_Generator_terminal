@@ -1,49 +1,28 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-
-// If there is no license, return an empty string
-
 function getLicenseBadge(license) {
+  let badge = '';
   if (license === 'MIT') {
-    return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
-  }
+    badge = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
+  } else
   if (license === 'Apache 2.0') {
-    return '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
-  }
+    badge = '[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
+  } else
   if (license === 'GNU GPLv3') {
-    return '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
-  }
+    badge = '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
+  } else
   if (license === 'Boost Software 1.0') {
-    return '[![License: Boost Software 1.0](https://www.boost.org/LICENSE_1_0.txt)](https://www.boost.org/LICENSE_1_0.txt)';
-  }
+    badge = '[![License: Boost Software 1.0](https://www.boost.org/LICENSE_1_0.txt)](https://www.boost.org/LICENSE_1_0.txt)';
+  } else
   if (license === 'Eclipse 2.0') {
-    return '[![License: EPL 2.0](https://opensource.org/licenses/EPL-1.0)](https://opensource.org/licenses/EPL-1.0)';
+    badge = '[![License: EPL 2.0](https://opensource.org/licenses/EPL-1.0)](https://opensource.org/licenses/EPL-1.0)';
+  } else {
+    badge = '';
   }
-  return '';
-}
-
-//getLicenseBadge('MIT');
-
+  return badge;
+};
 
 // TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-/*function getLicenseLink(license) {
-  if (license) {
-    // find actual license links first
-    return 'license links';
-  } else {
-    return '';
-  }
-}
-
-getLicenseLink(license);*/
 
 // TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-/*function renderLicenseSection(license) {
-    if (license !== "none") {
-      return ``;
-    }
-  }*/
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
@@ -71,7 +50,7 @@ function generateMarkdown(data) {
   ${data.credits}
   
   ## License
-  ${getLicenseBadge(license)}
+  ${getLicenseBadge(data.license)}
   This project is licensed under the ${data.license} license.
   
   ## Questions

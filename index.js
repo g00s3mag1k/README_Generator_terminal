@@ -1,8 +1,5 @@
-// TODO: Include packages needed for this application
 const fs = require('fs'); 
-
 const inquirer = require('inquirer');
-
 const generateMarkdown = require('./generateMarkdown.js');
 console.log("Welcome to my README.md generator!");
 
@@ -11,83 +8,67 @@ console.log("Welcome to my README.md generator!");
 const generateQuestions = [
     {
         type: 'input',
-        name: 'title',
+        name: 'Title',
         message: 'Name of your Project?'
     },
     {
         type: 'input',
-        name: 'description',
-        message: 'Brief Description of your Project; '
-    },
-    {
-        type: 'list',
-        name: 'table',
-        message: ['Description', 'Installation', 'Usage', 'Credits', 'License', 'Questions']
+        name: 'Description',
+        message: 'Brief Description of your Project? '
     },
     {
         type: 'input',
-        name: 'installation',
+        name: 'Installation',
         message: 'Explain installation instructions if any: '
     },
     {
         type: 'input',
-        name: 'usage',
+        name: 'Usage',
         message: 'List the languages you used in your project; '
     },
     {
         type: 'input',
-        name: 'credits',
+        name: 'Credits',
         message: 'List your collaborators, if any; '
     },
     {
         type: 'checkbox',
-        name: 'license',
+        name: 'License',
         message: 'Select a license if applicable: ',
-        choices: ['Apache 2.0', 'MIT', 'Boost Software 1.0', 'Eclipse 2.0', 'GNU GPLv3', 'None'],
+        choices: ['Apache 2.0', 'MIT', 'Boost Software 1.0', 'Eclipse 2.0', 'GNU GPLv3', 'None']
     },
     {
         type: 'input',
-        name: 'e-mail',
+        name: 'Email',
         message: 'Provide an e-mail address: '
     },
     {
         type: 'input',
-        name: 'github',
+        name: 'Github',
         message: 'What is your Github Username?'
-    },
-]
-/*.then((data) => {
-    const readmeContent = generateMarkdown(data);
-
-    fs.writeFile('README.md', readmeContent, (err) =>
-      err ? console.error(err) : console.log('README file has been created!')
-    );
-})
-.catch((error) => console.error(error));*/
+    }
+];
 
 // TODO: Create a function to write README file
 
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
       if (err) {
-      return console.log(err);
+        return console.log(err);
       }
       console.log("README file has been created!");
     });
-}
+  };
 
 // TODO: Create a function to initialize app
 
 function init() {
-    inquirer
-    .prompt(generateQuestions)
-    .then(function(userInput) {
-      console.log(userInput);
-      writeToFile(generateMarkdown(userInput));
-      
-    });
-}
+ inquirer
+ .prompt(generateQuestions).then(function(responses) {
+ console.log(responses)
+ writeToFile("README.md", generateMarkdown(responses));
+});
+};
 
 // Function call to initialize app
 init();
-
